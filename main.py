@@ -47,9 +47,9 @@ for x in bankActions:
   mainMenuAction = ("Going back to menu page...")
 #While loop ensures the continuation of the program until the user chooses to exit.
 while mainMenuAction != "yes" or "Yes":
-  userChooseAction = input("Choose an action by typing the exact word (CASE SENSITIVE):  ")
+  userChooseAction = input("Choose [1|2|3|4]: ")
   #User chooses an action (ex: bankActions[0] is 1. Withdraw) from the list with a case sensitive submission. If statement checks if they match and will enact the action according to the user's input.
-  if userChooseAction == bankActions[0]:
+  if userChooseAction == "1":
     print()
     withdrawAmount = float(input("How much do you want to withdraw? $"))
     userBalance = (userBalance - withdrawAmount)
@@ -58,14 +58,14 @@ while mainMenuAction != "yes" or "Yes":
     resetMenu()
 
     
-  if userChooseAction == bankActions[1]:
+  if userChooseAction == "2":
     print()
     depositAmount = float(input("How much do you want to deposit? $"))
     userBalance = (userBalance + depositAmount)
     print("Your current balance is $" +   str(round(userBalance,2)))
     resetMenu()
 
-  if userChooseAction == bankActions[2]:
+  if userChooseAction == "3":
     print()
     checkAccountUser = input("What is your username?  ")
     #If statements check the user's identity by matching usernames and passwords. 
@@ -89,7 +89,7 @@ while mainMenuAction != "yes" or "Yes":
       resetMenu()
 
       
-  if userChooseAction == bankActions[3]:
+  if userChooseAction == "4":
     print()
     print("Your final balance is $" + str(round(userBalance,2)))
     greet("thank you for coming to Aria Bank. Enjoy your day!" )
